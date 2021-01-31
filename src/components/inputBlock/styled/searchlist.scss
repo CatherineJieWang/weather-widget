@@ -1,0 +1,19 @@
+.search-container {
+  max-height: 500px;
+  max-width: 300px;
+  overflow: auto;
+  position: absolute;
+  top: 25px;
+  z-index: 2;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+  &__row {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px;
+    &:hover {
+      background-color: #4e94fb;
+    }
+  }
+}

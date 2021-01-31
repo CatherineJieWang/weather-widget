@@ -1,0 +1,13 @@
+.forecast-container {
+    display:flex ;
+    flex-direction:column;
+    align-items:center;
+    &__text {
+        color: #8b8b8b;
+        font-size: 14px;
+    }
+    img {
+        height: 15px
+    }
+}
+

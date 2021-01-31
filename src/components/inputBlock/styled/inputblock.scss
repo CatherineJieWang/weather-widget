@@ -1,0 +1,13 @@
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__display {
+    margin-left: 50px;
+    color: #555555;
+    font-size: 20px;
+  }
+  &__input-block {
+      position: relative;
+  }
+}
