@@ -1,11 +1,11 @@
+export let LOCATION_URL: string;
+export let WEATHER_URL: string;
+export let GEOLOCATION_URL: string;
 
-export let LOCATION_URL:string;
-export let WEATHER_URL:string;
+//both production and testing env using live api 
+//TODO: Can build testing api for development env
 
-if (process.env.SERVER_ENV === "prod") {
-  WEATHER_URL = "http://localhost:8080/weather";
-  LOCATION_URL = "http://localhost:8080/location";
-} else {
-  WEATHER_URL = "http://localhost:8080/weather";
-  LOCATION_URL = "http://localhost:8080/location";
-}
+WEATHER_URL = "https://weather-backend-development.herokuapp.com/weather";
+LOCATION_URL = "https://weather-backend-development.herokuapp.com/location";
+GEOLOCATION_URL =
+  "https://weather-backend-development.herokuapp.com/geoslocation";
