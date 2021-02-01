@@ -3,7 +3,7 @@ import { CardProps } from "./interfaces";
 import Details from "../details/Details";
 import Description from "../description/Description";
 import ForeCast from "../forecast/ForeCast";
-import {Weather} from '../common/interfaces'
+import {Weather} from '../../common/interfaces'
 import "./card.scss";
 const Card: FC<CardProps> = (props) => {
   const { weathers, city } = props;

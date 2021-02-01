@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchList /> renders with correct result with 'Sant' as prop 1`] = `
+<div
+  className="search-container"
+>
+  <p
+    className="search-container__row"
+    onClick={[Function]}
+  >
+    Santa Cruz
+  </p>
+  <p
+    className="search-container__row"
+    onClick={[Function]}
+  >
+    Santiago
+  </p>
+  <p
+    className="search-container__row"
+    onClick={[Function]}
+  >
+    Santorini
+  </p>
+  <p
+    className="search-container__row"
+    onClick={[Function]}
+  >
+    Santander
+  </p>
+  <p
+    className="search-container__row"
+    onClick={[Function]}
+  >
+    Santa Cruz de Tenerife
+  </p>
+  <p
+    className="search-container__row"
+    onClick={[Function]}
+  >
+    Santa Fe
+  </p>
+</div>
+`;

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { ForeCastProps } from "./interfaces";
-import { weatherMap } from "../common/iconMap";
+import { weatherMap } from "../../common/iconMap";
 import moment from "moment";
 import { customizeDate } from "../../utils/customizeData";
 import "./forecast.scss";

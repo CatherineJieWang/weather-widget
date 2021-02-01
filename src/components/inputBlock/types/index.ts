@@ -1,16 +1,17 @@
-import {Weather} from '../../common/interfaces'
+import {Weather} from '../../../common/interfaces'
+import {Dispatch, SetStateAction} from 'react'
 export interface SearchResult {
   searchResult?: Location[];
-  setCity?: any;
-  setOpen?: any;
-  setWeathers?:any;
-  setInputValue?:any;
+  setCity: Dispatch<SetStateAction<string >>;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+  setWeathers:Dispatch<SetStateAction<Weather[]>>;
+  setInputValue:Dispatch<SetStateAction<string>>;
 }
 
 export interface InputBlockProps {
-  setWeathers?: any;
+  setWeathers: Dispatch<SetStateAction<Weather[]>>;
   city?: string;
-  setCity?:any;
+  setCity:Dispatch<SetStateAction<string>>;
 }
 
 export interface Location {

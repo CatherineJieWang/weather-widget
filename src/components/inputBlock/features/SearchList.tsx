@@ -4,12 +4,12 @@ import "../styled/searchlist.scss";
 import { getWeather } from "../../../data/fetchDataFromServer";
 
 const SearchList: FC<SearchResult> = (props) => {
-  const { searchResult,setInputValue, setCity, setOpen, setWeathers } = props;
+  const { searchResult, setInputValue, setCity, setOpen, setWeathers } = props;
   const getWeatherFromServer = async (cityId: number) => {
     try {
       if (cityId) {
         const weatherResult = await getWeather(cityId);
-        if (weatherResult.data) {
+        if (weatherResult.data && weatherResult.data.length > 0) {
           setWeathers(weatherResult.data.slice(0, 5));
         }
       }
@@ -23,12 +23,13 @@ const SearchList: FC<SearchResult> = (props) => {
       {searchResult &&
         searchResult.map((data: Location, index: number) => (
           <p
+            
             className="search-container__row"
             key={index}
             onClick={() => {
               if (data.woeid) getWeatherFromServer(data.woeid);
-              setInputValue('')
-              setCity(data.title);
+              setInputValue("");
+              setCity(data.title ? data.title : "");
               setOpen(false);
             }}
           >

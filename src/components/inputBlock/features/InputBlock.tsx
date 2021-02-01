@@ -6,7 +6,7 @@ import { Location, InputBlockProps } from "../types";
 
 const InputBlock: FC<InputBlockProps> = (props) => {
   const { city, setCity, setWeathers } = props;
-  const [inputValue, setInputValue] = useState<string>();
+  const [inputValue, setInputValue] = useState<string>("");
   const [open, setOpen] = useState<boolean>(false);
   const [searchResult, setSearchResult] = useState<Location[]>();
   const getLocationFromServer = async (city: string) => {
@@ -26,7 +26,7 @@ const InputBlock: FC<InputBlockProps> = (props) => {
     }
   }, [inputValue]);
 
-  function handleChange(event: any) {
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const value = event.target.value;
     setOpen(true);
     setInputValue(value);
@@ -35,6 +35,7 @@ const InputBlock: FC<InputBlockProps> = (props) => {
     <div className="input-container">
       <div className="input-container__input-block">
         <input
+          data-testid="search"
           placeholder="Input Location"
           value={inputValue}
           onChange={(e) => handleChange(e)}

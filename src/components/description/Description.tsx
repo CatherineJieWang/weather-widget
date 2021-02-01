@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { DescriptionProps } from "./interfaces";
-import { weatherMap } from "../common/iconMap";
+import { weatherMap } from "../../common/iconMap";
 import "./description.scss";
 const Description: FC<DescriptionProps> = (props) => {
   const { weather } = props;

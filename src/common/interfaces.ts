@@ -15,3 +15,6 @@ export interface Weather {
   visibility: number;
   predictability: number;
 }
+export interface Position {
+  [props:string] :{ [props:string]:string | number}
+}
