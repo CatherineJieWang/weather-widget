@@ -29,7 +29,7 @@ const Weather = () => {
       } else {
         navigator.geolocation.getCurrentPosition(success, error, {
           maximumAge: 5 * 60 * 1000,
-          timeout: 3000,
+          timeout: 1000,
         });
       }
     }
@@ -48,7 +48,7 @@ const Weather = () => {
           setCity(locationResult.data[0].title || "");
           const weatherResult = await getWeather(locationResult.data[0].woeid);
           if (weatherResult.data) {
-            setWeathers(weatherResult.data.slice(0, 5));
+            setWeathers(weatherResult.data.consolidated_weather.slice(0, 5));
           }
         }
       } catch {
