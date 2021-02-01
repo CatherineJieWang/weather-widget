@@ -55,7 +55,7 @@ const Weather = () => {
         console.log("Server Error");
       }
     };
-    geoFindGeoLocation();
+    if(!city.length) geoFindGeoLocation();
 
     getWeatherFromServer(city);
   }, [city, latitude, longitude]);
