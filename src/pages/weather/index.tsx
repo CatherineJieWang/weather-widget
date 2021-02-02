@@ -6,6 +6,10 @@ import { Weather as WeatherList, Location } from '../../common/interfaces';
 import { getWeatherFromServer } from '../../components/dataMiddleWare/index';
 
 const Weather = () => {
+  //TODO && OPTIONS:
+  //Store the local location and weather at first time
+  //Get localstorage data when waiting for the api response
+  //If project complex enough - use redux set state management
   const [weathers, setWeathers] = useState<WeatherList[]>([]);
   const [city, setCity] = useState<string>('');
   const [locationResult, setLocationResult] = useState<Location[]>([]);

@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { LOCATION_URL, WEATHER_URL, GEOLOCATION_URL } from './config/config';
+import { API_URL , ENDPOINTS } from './config/config';
 import { LocationApiProps, WeatherApiProps } from './interfaces';
 import { Location } from '../common/interfaces';
-export const getWeather = (cityId: WeatherApiProps) => axios.get(`${WEATHER_URL}/${cityId}`);
+export const getWeather = (cityId: WeatherApiProps) => axios.get(`${API_URL}${ENDPOINTS.WEATHER}/${cityId}`);
 
 export const getNameLocation = (city: LocationApiProps) =>
-  axios.get<Location[]>(`${LOCATION_URL}/?query=${city}`);
+  axios.get<Location[]>(`${API_URL}${ENDPOINTS.LOCATION}/?query=${city}`);
 
 export const getGeoLocation = (lattlong: LocationApiProps) =>
-  axios.get<Location[]>(`${GEOLOCATION_URL}/?lattlong=${lattlong}`);
+  axios.get<Location[]>(`${API_URL}${ENDPOINTS.GEOLOCATION}/?lattlong=${lattlong}`);

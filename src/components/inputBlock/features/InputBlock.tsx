@@ -21,9 +21,12 @@ const InputBlock: FC<InputBlockProps> = (props) => {
     setOpen(true);
     setInputValue(value);
   }
+  //TODO:
+  // Set debounce here to improve the searching performance or if the data is dynamic and huge
   return (
     <div className="input-container">
       <div className="input-container__input-block">
+        
         <input
           data-testid="search"
           placeholder="Input Location"

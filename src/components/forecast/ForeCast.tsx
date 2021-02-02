@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { ForeCastProps } from './interfaces';
 import { weatherMap } from '../../common/iconMap';
 import moment from 'moment';
-import { customizeDate } from '../../utils/customizeData';
+import { customizeDate } from '../../utils/customizeDate';
 import './forecast.scss';
 const ForeCast: FC<ForeCastProps> = (props) => {
   const { date, max_temp, min_temp, state_abbr } = props;
