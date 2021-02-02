@@ -1,35 +1,21 @@
-import React, { FC } from "react";
-import { SearchResult, Location } from "../types";
-import "../styled/searchlist.scss";
-import { getWeather } from "../../../data/fetchDataFromServer";
-
+import React, { FC } from 'react';
+import { SearchResult } from '../types';
+import { Location } from '../../../common/interfaces';
+import '../styled/searchlist.scss';
+import { getWeatherFromServer } from '../../dataMiddleWare';
 const SearchList: FC<SearchResult> = (props) => {
   const { searchResult, setInputValue, setCity, setOpen, setWeathers } = props;
-  const getWeatherFromServer = async (cityId: number) => {
-    try {
-      if (cityId) {
-        const weatherResult = await getWeather(cityId);
-        if (weatherResult.data && weatherResult.data.length > 0) {
-          setWeathers(weatherResult.data.slice(0, 5));
-        }
-      }
-    } catch {
-      console.log("Server Error");
-    }
-  };
-
   return (
     <div className="search-container">
       {searchResult &&
         searchResult.map((data: Location, index: number) => (
           <p
-            
             className="search-container__row"
             key={index}
             onClick={() => {
-              if (data.woeid) getWeatherFromServer(data.woeid);
-              setInputValue("");
-              setCity(data.title ? data.title : "");
+              if (data.woeid) getWeatherFromServer(data.woeid, setWeathers);
+              setInputValue('');
+              setCity(data.title ? data.title : '');
               setOpen(false);
             }}
           >

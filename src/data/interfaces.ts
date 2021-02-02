@@ -1,2 +1,2 @@
-export type LocationApiProps  = string
-export type WeatherApiProps  = number | undefined
+export type LocationApiProps = string;
+export type WeatherApiProps = number | undefined;

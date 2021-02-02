@@ -1,28 +1,18 @@
-import React, { useState, FC, useEffect } from "react";
-import { getNameLocation } from "../../../data/fetchDataFromServer";
-import SearchList from "./SearchList";
-import "../styled/inputblock.scss";
-import { Location, InputBlockProps } from "../types";
-
+import React, { useState, FC, useEffect } from 'react';
+import SearchList from './SearchList';
+import '../styled/inputblock.scss';
+import { InputBlockProps } from '../types';
+import { Location } from '../../../common/interfaces';
+import { getLocationFromServer } from '../../dataMiddleWare';
 const InputBlock: FC<InputBlockProps> = (props) => {
   const { city, setCity, setWeathers } = props;
-  const [inputValue, setInputValue] = useState<string>("");
+  const [inputValue, setInputValue] = useState<string>('');
   const [open, setOpen] = useState<boolean>(false);
-  const [searchResult, setSearchResult] = useState<Location[]>();
-  const getLocationFromServer = async (city: string) => {
-    try {
-      const locationResult = await getNameLocation(city);
-      if (locationResult.data) {
-        setSearchResult(locationResult.data);
-      }
-      return locationResult;
-    } catch {
-      console.log("Server Error");
-    }
-  };
+  const [searchResult, setSearchResult] = useState<Location[]>([]);
+
   useEffect(() => {
     if (inputValue) {
-      getLocationFromServer(inputValue);
+      getLocationFromServer(inputValue, setSearchResult);
     }
   }, [inputValue]);
 

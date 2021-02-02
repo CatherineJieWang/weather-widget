@@ -1,9 +1,7 @@
 import React from 'react';
-import Weather from './pages/weather'
+import Weather from './pages/weather';
 function App() {
-  return (
-    <Weather/>
-  );
+  return <Weather />;
 }
 
 export default App;

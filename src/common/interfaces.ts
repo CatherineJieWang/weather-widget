@@ -15,6 +15,13 @@ export interface Weather {
   visibility: number;
   predictability: number;
 }
+
+export interface Location {
+  title?: string;
+  location_type?: string;
+  woeid?: number;
+  latt_long?: string;
+}
 export interface Position {
-  [props:string] :{ [props:string]:string | number}
+  [props: string]: { [props: string]: string | number };
 }
